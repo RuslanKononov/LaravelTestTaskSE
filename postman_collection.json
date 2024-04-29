@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "82f8c6eb-144d-4c4f-b6b5-187303843502",
+		"name": "EpicFrog Test API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10731170"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"protocolProfileBehavior": {
+				"strictSSL": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Qwertyui\",\n    \"email\": \"qwertyui@qwerty.com\",\n    \"password\": \"12345678\",\n    \"password_confirmation\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/user-register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"user-register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"qwertyu@qwerty.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/user-login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"user-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS91c2VyLWxvZ2luIiwiaWF0IjoxNzEzOTcyNjYzLCJleHAiOjE3MTM5NzYyNjMsIm5iZiI6MTcxMzk3MjY2MywianRpIjoiRFhma1k4SndLc1p3R2xaVyIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.F7Kf61ovQ9Z1jhNRTgrBH6hXvZak7VuD4PXiiOHAt90",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/user-info",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"user-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Funds to User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS91c2VyLWxvZ2luIiwiaWF0IjoxNzE0MTY3OTQyLCJleHAiOjE3MTQxNzE1NDIsIm5iZiI6MTcxNDE2Nzk0MiwianRpIjoiM2FQMmFRYlNGZ2xwM1ZuWCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.D38yZt9rfKq2RGQjfYyh2vZkoaXichhvTsSTIfc2xQM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"qwerty@qwerty.com\",\n    \"amount\": 50.00,\n    \"description\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/send-funds",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"send-funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Send Funds to Users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS91c2VyLWxvZ2luIiwiaWF0IjoxNzE0MzEzODYyLCJleHAiOjE3MTQzMTc0NjIsIm5iZiI6MTcxNDMxMzg2MiwianRpIjoiVlhLUFpEOE9ra2dvOEw4bCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.N2L8L1yh_GIEBJKSFu7t_19uw-6JRsVHqNO-fKcoIyA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 50.00,\n    \"bulkSend\": [\n        {\n            \"receiver\": \"qwerty@qwerty.com\",\n            \"amount\": \"10\",\n            \"description\": \"Transaction for qwerty\"\n        },\n        {\n            \"receiver\": \"qwer@qwerty.com\",\n            \"amount\": \"40\",\n            \"description\": \"Transaction for qwer\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/bulk-send-funds",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"bulk-send-funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Transactions History",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS91c2VyLWxvZ2luIiwiaWF0IjoxNzE0MTY3OTQyLCJleHAiOjE3MTQxNzE1NDIsIm5iZiI6MTcxNDE2Nzk0MiwianRpIjoiM2FQMmFRYlNGZ2xwM1ZuWCIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.D38yZt9rfKq2RGQjfYyh2vZkoaXichhvTsSTIfc2xQM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/transaction-history",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"transaction-history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

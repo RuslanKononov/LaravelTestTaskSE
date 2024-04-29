@@ -47,6 +47,7 @@ You can use next routes:
 * `/api/bulk-send-funds`
 * `/api/transaction-history`
 
+#### You can use Postman collection `postman_collection.json` to test API
 ### Commands
 You can use command
 * `php artisan subscription:charge` to charge subscription fee
