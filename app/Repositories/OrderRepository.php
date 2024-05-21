@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Repositories;
 
+use App\Exceptions\Order\UpdateOrderException;
 use App\Http\DTO\Order\BulkOrderDTO;
 use App\Http\DTO\Order\CreateBulkOrderDTO;
 use App\Http\DTO\Order\CreateOrderDTO;
@@ -47,7 +48,7 @@ class OrderRepository
 
         if (!$order->save()) {
             // @todo log exception of order state update
-            throw new \Exception('Order state not updated');
+            throw new UpdateOrderException('Order state not updated');
         }
 
         return $this->orderFactory->createOrderDTOFromOrder($order);
@@ -72,7 +73,7 @@ class OrderRepository
             ->update(['order_state' => $orderState->value]);
         if ($updatedOrdersCount !== $bulkOrderDTO->getOrderDTOsCount()) {
             // @todo log exception of bulk order state update
-            throw new \Exception('Bulk order state not correctly updated');
+            throw new UpdateOrderException('Bulk order state not correctly updated');
         }
 
         return $this->getBulkOrderDTOByOrderUuidCollection($bulkOrderDTO->getOrderIds());

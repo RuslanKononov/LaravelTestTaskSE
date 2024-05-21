@@ -11,13 +11,29 @@ use App\Http\DTO\Transaction\TransactionDTOCollection;
 use App\Models\Transaction;
 use App\Repositories\Factory\SubscriptionTransactionFactory;
 use App\Repositories\Factory\TransactionFactory;
+use Illuminate\Support\Facades\DB;
 
-class TransactionRepository
+class TransactionRepository extends AbstractRepository
 {
     public function __construct(
         private readonly TransactionFactory $transactionFactory,
         private readonly SubscriptionTransactionFactory $subscriptionTransactionFactory,
     ) {
+    }
+
+    public function beginTransaction(): void
+    {
+        DB::beginTransaction();
+    }
+
+    public function commitTransaction(): void
+    {
+        DB::commit();
+    }
+
+    public function rollbackTransaction(): void
+    {
+        DB::rollBack();
     }
 
     public function getPreviousTransactionByUserId(int $userId): PreviousTransactionDTO
